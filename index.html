@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Moje Portfolio SPA</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo-area">
+                <span class="logo">Weronika Kawa</span>
+                <!-- Tutaj będzie pojawiać się nazwa strony -->
+                <span id="header-page-title">| Home</span>
+            </div>
+            <ul class="Header-links-ul">
+                <li><a href="#" id="link-about">Home</a></li>
+                <li><a href="#" id="link-it">IT</a></li>
+                <li><a href="#" id="link-music">Muzyka</a></li>
+                <li><a href="#" id="link-lifestyle">Pasje</a></li>
+                <li><a href="#" id="link-gallery">Galeria</a></li>
+                <li><a href="#" id="link-contact">Kontakt</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" title="Przełącz motyw">🌓</button>
+    </header>
+
+    <main id="main-content">
+        <!-- Tutaj router wstawi treść -->
+    </main>
+
+    <!-- Modal do powiększania zdjęć -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <script src="js/router.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
