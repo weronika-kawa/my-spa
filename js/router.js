@@ -1,11 +1,11 @@
 // 1. Definiujemy adresy URL dla sekcji (zgodnie z Twoim PDF)
 let pageUrls = {
-    about: '/my-spa/index.html?about',
-    it: '/my-spa/index.html?it',
-    lifestyle: '/my-spa/index.html?lifestyle',
-    music: '/my-spa/index.html?music',
-    gallery: '/my-spa/index.html?gallery',
-    contact: '/my-spa/index.html?contact'
+    about: '?about',
+    it: '?it',
+    lifestyle: '?lifestyle',
+    music: 'music',
+    gallery: '?gallery',
+    contact: '?contact'
 };
 
 const pagesContent = {
@@ -218,7 +218,7 @@ function renderPage(page) {
 }
 
 function popStateHandler() {
-    const url = window.location.href;
+    const url = window.location.search;
     if (url.includes('?it')) renderPage('it');
     else if (url.includes('?music')) renderPage('music');
     else if (url.includes('?lifestyle')) renderPage('lifestyle');
