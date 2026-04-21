@@ -181,7 +181,7 @@ const pagesContent = {
                         </div>
                         <textarea placeholder="W czym mogę pomóc?" rows="6" style="margin-bottom: 20px;" required></textarea>
                         
-                        <div class="g-recaptcha" data-sitekey="6LelhsIsAAAAAG6MNqvvwHFHAPn_k9YdLKyOa4Vi"></div>
+                        <div class="g-recaptcha" data-sitekey="6Lf9lcIsAAAAAJSJacqgyvRWCpSPtIc9S1X20kmk"></div>
                         
                         <button type="submit" class="submit-btn" style="margin-top: 10px;">Wyślij wiadomość</button>
                     </form>
@@ -206,12 +206,18 @@ function renderPage(page) {
 
     // Inicjalizacja galerii i captchy
     if (page === 'gallery') initGallery();
+
     if (page === 'contact') {
-        setTimeout(() => {
-            const container = document.querySelector('.g-recaptcha');
-            if (container && container.innerHTML === "") grecaptcha.render(container);
-        }, 100);
-    }
+    setTimeout(() => {
+        const container = document.querySelector('.g-recaptcha');
+        // Sprawdzamy czy kontener istnieje i czy nie został już wyrenderowany
+        if (container && container.innerHTML === "") {
+            grecaptcha.render(container, {
+                'sitekey': '6Lf9lcIsAAAAAJSJacqgyvRWCpSPtIc9S1X20kmk' 
+            });
+        }
+    }, 100);
+}
 
     // Przewiń na górę po zmianie strony
     window.scrollTo(0, 0);
