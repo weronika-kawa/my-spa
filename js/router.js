@@ -15,9 +15,9 @@ const pagesContent = {
             <h1>Cześć, jestem Weronika</h1>
             <p>Łączę świat precyzyjnego kodu z magią dźwięków i pasją do ruchu.</p>
             <div class="quick-about">
-                <span class="badge">Programistka iOS</span>
-                <span class="badge">Muzyk NFM</span>
-                <span class="badge">Sędzia Sportowy</span>
+                <span class="badge-home">Programistka iOS</span>
+                <span class="badge-home">Muzyk NFM</span>
+                <span class="badge-home">Sędzia Sportowy</span>
             </div>
         </div>
     </section>
@@ -42,7 +42,7 @@ const pagesContent = {
                     <h3>Foodie</h3>
                     <p style="color: var(--text-light); margin-bottom: 15px;">Twój osobisty przewodnik kulinarny. Kolekcjonuj wspomnienia z restauracji.</p>
                     <div style="margin-bottom: 20px;">
-                        <span class="badge">SwiftUI</span><span class="badge">Core Data</span>
+                        <span class="badge-it">SwiftUI</span><span class="badge-it">Core Data</span>
                     </div>
                     <a href="#" class="btn-git">Zobacz projekt</a>
                 </article>
@@ -51,7 +51,7 @@ const pagesContent = {
                     <h3>Cultra</h3>
                     <p style="color: var(--text-light); margin-bottom: 15px;">Innowacyjne podejście do odkrywania kultury i nawigacji po muzeach.</p>
                     <div style="margin-bottom: 20px;">
-                        <span class="badge">Swift</span><span class="badge">REST API</span>
+                        <span class="badge-it">Swift</span><span class="badge-it">REST API</span>
                     </div>
                     <a href="#" class="btn-git">Zobacz projekt</a>
                 </article>
@@ -60,9 +60,9 @@ const pagesContent = {
                     <h3>MelodyMaster</h3>
                     <p style="color: var(--text-light); margin-bottom: 15px;">Interaktywny trener słuchu dla uczniów szkół muzycznych.</p>
                     <div style="margin-bottom: 20px;">
-                        <span class="badge">AVFoundation</span>
+                        <span class="badge-it">AVFoundation</span>
                     </div>
-                    <span class="badge" style="background: #eee; color: #666;">W budowie</span>
+                    <span class="badge-it" style="background: #eee; color: #666;">W budowie</span>
                 </article>
             </div>
         </div>`,
@@ -78,7 +78,7 @@ const pagesContent = {
         </section>
 
         <!-- Sekcja 1: Działalność -->
-        <h2 class="music-section-title">Działalność Zawodowa</h2>
+        <h2 class="music-section-title">Działalność zawodowa</h2>
         <div class="grid">
             <div class="card music-card">
                 <h3>Narodowe Forum Muzyki</h3>
@@ -90,7 +90,7 @@ const pagesContent = {
                 </ul>
             </div>
             <div class="card music-card">
-                <h3>Działalność Artystyczna</h3>
+                <h3>Działalność artystyczna</h3>
                 <p><strong>Muzyk Instrumentalista / Teoretyk</strong></p>
                 <ul class="music-info-list">
                     <li>Wieloletnia praktyka gry na klarnecie (PSM II st.).</li>
@@ -184,6 +184,7 @@ const pagesContent = {
                         <div class="g-recaptcha" data-sitekey="6Lf9lcIsAAAAAJSJacqgyvRWCpSPtIc9S1X20kmk"></div>
                         
                         <button type="submit" class="submit-btn" style="margin-top: 10px;">Wyślij wiadomość</button>
+                        <div id="form-status" style="margin-top: 15px; font-weight: 600; text-align: center;"></div>
                     </form>
                 </div>
             </div>
