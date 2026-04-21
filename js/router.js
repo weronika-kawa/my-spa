@@ -218,30 +218,38 @@ function renderPage(page) {
 }
 
 function popStateHandler() {
-    const url = window.location.search;
-    if (url.includes('?it')) renderPage('it');
-    else if (url.includes('?music')) renderPage('music');
-    else if (url.includes('?lifestyle')) renderPage('lifestyle');
-    else if (url.includes('?gallery')) renderPage('gallery');
-    else if (url.includes('?contact')) renderPage('contact');
-    else renderPage('about');
+    // Używamy URLSearchParams, żeby łatwiej wyciągnąć parametry
+    const params = new URLSearchParams(window.location.search);
+    const page = params.keys().next().value; // Pobiera pierwszy parametr (np. 'it', 'music')
+
+    if (pagesContent[page]) {
+        renderPage(page);
+    } else {
+        renderPage('about'); // Domyślnie Home
+    }
 }
 
 window.onpopstate = popStateHandler;
 
 document.addEventListener('DOMContentLoaded', () => {
     const setupLink = (id, page) => {
-        document.querySelector(id).addEventListener('click', (e) => {
-            e.preventDefault();
-            history.pushState({ page }, page, `/index.html?${page}`);
-            renderPage(page);
-        });
+        const link = document.querySelector(id);
+        if (link) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                // KLUCZOWA POPRAWKA: ścieżka względna bez /index.html
+                history.pushState({ page }, page, `?${page}`);
+                renderPage(page);
+            });
+        }
     };
+    
     setupLink('#link-about', 'about');
     setupLink('#link-it', 'it');
     setupLink('#link-music', 'music');
     setupLink('#link-lifestyle', 'lifestyle');
     setupLink('#link-gallery', 'gallery');
     setupLink('#link-contact', 'contact');
-    popStateHandler();
+    
+    popStateHandler(); // Inicjalizacja przy starcie
 });

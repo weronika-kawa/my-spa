@@ -21,7 +21,6 @@ function initGallery() {
         // Mały szary placeholder (opcjonalnie można dać mikro-obrazek)
         imgElement.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
         
-        imgElement.onclick = () => openModal(imgElement.src);
         grid.appendChild(imgElement);
     });
 
@@ -45,12 +44,17 @@ async function loadAsyncAsBlob(imgElement) {
     const url = imgElement.dataset.src;
     try {
         const response = await fetch(url);
-        const blob = await response.blob(); // Pobieramy jako BLOB
-        const objectURL = URL.createObjectURL(blob); // Tworzymy tymczasowy URL
+        if (!response.ok) throw new Error('Network response was not ok');
+        const blob = await response.blob();
+        const objectURL = URL.createObjectURL(blob);
         
         imgElement.src = objectURL;
         imgElement.classList.remove('lazy');
         imgElement.classList.add('loaded');
+
+        // POPRAWKA: Teraz, gdy mamy już Blob URL, przypisujemy kliknięcie
+        imgElement.onclick = () => openModal(objectURL); 
+
     } catch (error) {
         console.error("Błąd ładowania obrazka jako BLOB:", error);
     }
@@ -88,3 +92,4 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 });
+
