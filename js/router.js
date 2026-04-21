@@ -181,7 +181,7 @@ const pagesContent = {
                         </div>
                         <textarea placeholder="W czym mogę pomóc?" rows="6" style="margin-bottom: 20px;" required></textarea>
                         
-                        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                        <div class="g-recaptcha" data-sitekey="6LelhsIsAAAAAG6MNqvvwHFHAPn_k9YdLKyOa4Vi"></div>
                         
                         <button type="submit" class="submit-btn" style="margin-top: 10px;">Wyślij wiadomość</button>
                     </form>
