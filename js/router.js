@@ -1,11 +1,11 @@
 // 1. Definiujemy adresy URL dla sekcji (zgodnie z Twoim PDF)
 let pageUrls = {
-    about: '/index.html?about',
-    it: '/index.html?it',
-    lifestyle: '/index.html?lifestyle',
-    music: '/index.html?music',
-    gallery: '/index.html?gallery',
-    contact: '/index.html?contact'
+    about: '/my-spa/index.html?about',
+    it: '/my-spa/index.html?it',
+    lifestyle: '/my-spa/index.html?lifestyle',
+    music: '/my-spa/index.html?music',
+    gallery: '/my-spa/index.html?gallery',
+    contact: '/my-spa/index.html?contact'
 };
 
 const pagesContent = {
