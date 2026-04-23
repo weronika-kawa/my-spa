@@ -443,3 +443,24 @@ h1 { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -1p
     padding: 10px;
     border-radius: 8px;
 }
+
+/* Styl dla telefonów (ekran mniejszy niż 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Układa logo i menu jedno pod drugim */
+        padding: 10px;
+    }
+
+    .Header-links-ul {
+        width: 100%;           /* Menu zajmuje całą szerokość telefonu */
+        flex-wrap: wrap;       /* Pozwala linkom przeskoczyć do nowej linii, jeśli się nie mieszczą */
+        justify-content: center;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .header-link {
+        padding: 10px 15px;    /* Większe odstępy, żeby łatwiej było klikać palcem */
+        font-size: 14px;       /* Opcjonalnie mniejsza czcionka, by wszystko weszło */
+    }
+}

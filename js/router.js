@@ -1,4 +1,3 @@
-// 1. Definiujemy adresy URL dla sekcji (zgodnie z Twoim PDF)
 let pageUrls = {
     about: '?about',
     it: '?it',
@@ -244,7 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (link) {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                // KLUCZOWA POPRAWKA: ścieżka względna bez /index.html
                 history.pushState({ page }, page, `?${page}`);
                 renderPage(page);
             });
